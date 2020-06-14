@@ -2,16 +2,17 @@
   "name": "url-shortener",
   "version": "1.0.0",
   "description": "A basic url shortener",
-  "main": "server.js",
+  "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node app.js"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/irevenko/url-shortener.git"
   },
   "keywords": [
-    "url"
+    "url",
+    "shortener"
   ],
   "author": "Ilya Revenko <ilya.revenko17@gmail.com>",
   "license": "MIT",

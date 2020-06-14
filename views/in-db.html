@@ -1,0 +1,8 @@
+<form action="shorten" method="POST">
+  <label for="full-url">Enter your URL</label> <br>
+  <input type="url" name="full-url" id="url-input" minlength="1">
+  <button type="submit">Shrink</button>
+  <div id="display-short-url">
+    <%- urlInDb %>
+  </div>
+</form>
