@@ -1,8 +1,27 @@
-<form action="shorten" method="POST">
-  <label for="full-url">Enter your URL</label> <br>
-  <input type="url" name="full-url" id="url-input" minlength="1">
-  <button type="submit">Shrink</button>
-  <div id="display-short-url">
-    <%- newUrl %>
+<nav class="flex items-center justify-between flex-wrap bg-red-500 p-6">
+  <div class="flex items-center flex-shrink-0 text-white mr-6">
+    <img src="https://www.svgrepo.com/show/7355/cherry.svg" alt="cherry" width="80">
+    <span class="font-semibold text-xl tracking-tight">Cherry Shortener</span>
+  </div>
+  <div class="w-full block flex-grow lg:flex lg:items-center lg:w-auto">
+    <div class="text-sm lg:flex-grow">
+      <a href="#responsive-header" class="block mt-4 lg:inline-block lg:mt-0 text-red-200 hover:text-white">
+      </a>
+    </div>
+    <div>
+      <a href="#" class="inline-block text-sm px-4 py-2 leading-none border rounded text-white border-white hover:border-transparent hover:text-red-500 hover:bg-white mt-4 lg:mt-0">GitHub</a>
+    </div>
+  </div>
+</nav>
+<form class="w-full max-w-sm container mx-auto mt-32" action="shorten" method="POST" id="url-form">
+  <label class="block text-gray-700 text-lg font-bold mb-2" for="full-url">
+    Enter you URL
+  </label>
+  <div class="flex items-center border-b border-b-2 border-red-500 py-2">
+  <input class="appearance-none bg-transparent border-none w-full text-gray-700 mr-3 py-1 px-2 leading-tight focus:outline-none" type="url" name="full-url" id="url-input" placeholder="URL">
+  <button class="flex-shrink-0 bg-red-500 hover:bg-red-700 border-red-500 hover:border-red-700 text-sm border-4 text-white py-1 px-2 rounded" type="submit">Shrink</button>
   </div>
 </form>
+<div id="display-short-url" class="container mx-auto max-w-sm">
+  <p class="text-2xl"><%- newUrl %></p>
+</div>
