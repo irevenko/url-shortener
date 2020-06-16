@@ -1,13 +1,14 @@
+/* eslint-disable no-console */
 const mongoose = require('mongoose');
 
-async function connectToMongo() { 
-  try { 
-    await mongoose.connect('mongodb://127.0.0.1/url-shortener', { 
+async function connectToMongo() {
+  try {
+    await mongoose.connect(process.env.DB_URI, {
       useNewUrlParser: true,
       useUnifiedTopology: true,
     });
-    console.log('connected to db');
-  } catch (err) { 
+    console.log('Connected to db!');
+  } catch (err) {
     console.error(err.message);
   }
 }

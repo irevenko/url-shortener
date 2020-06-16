@@ -6,4 +6,4 @@ const urlSchema = new mongoose.Schema({
   urlCipher: String,
 });
 
-module.exports = mongoose.model('Url', urlSchema)
+module.exports = mongoose.model('Url', urlSchema);

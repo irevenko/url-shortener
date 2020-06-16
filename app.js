@@ -1,21 +1,23 @@
+/* eslint-disable no-console */
 const Koa = require('koa');
 const render = require('koa-ejs');
 const bodyParser = require('koa-bodyparser');
+const path = require('path');
 const connectToMongo = require('./models/db');
 const controllers = require('./routes');
-const path = require('path');
+require('dotenv').config();
 
 const app = new Koa();
 const port = process.env.PORT || 3000;
 
 connectToMongo();
 
-render(app, { 
+render(app, {
   root: path.join(__dirname, 'views'),
   layout: 'template',
   viewExt: 'html',
   cache: false,
-  debug: false
+  debug: false,
 });
 
 app.use(bodyParser());
