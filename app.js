@@ -4,7 +4,7 @@ const render = require('koa-ejs');
 const bodyParser = require('koa-bodyparser');
 const path = require('path');
 const connectToMongo = require('./models/db');
-const controllers = require('./routes');
+const routes = require('./routes');
 require('dotenv').config();
 
 const app = new Koa();
@@ -21,6 +21,6 @@ render(app, {
 });
 
 app.use(bodyParser());
-app.use(controllers.routes());
-app.use(controllers.allowedMethods());
+app.use(routes.routes());
+app.use(routes.allowedMethods({ throw: true }));
 app.listen(port, () => console.log(`Server is listening at port: ${port}`));

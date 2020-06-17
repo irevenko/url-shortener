@@ -5,10 +5,10 @@ const Url = require('../models/url');
 
 const router = new Router();
 
-router.post('/shorten', async (ctx) => {
+router.post('/shortener', async (ctx) => {
   const fullUrl = ctx.request.body['full-url'];
   const parentUrl = process.env.PARENT_URL;
-  const urlCipher = shortid.generate();
+  const urlCode = shortid.generate();
 
   try {
     const urlInDb = await Url.findOne({ fullUrl });
@@ -18,11 +18,11 @@ router.post('/shorten', async (ctx) => {
         fullUrl,
       });
     } else {
-      const shortUrl = `${parentUrl}/${urlCipher}`;
+      const shortUrl = `${parentUrl}/${urlCode}`;
       const newUrl = new Url({
         fullUrl,
         shortUrl,
-        urlCipher,
+        urlCode,
       });
       await newUrl.save();
       await ctx.render('not-in-db', {

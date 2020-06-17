@@ -4,15 +4,16 @@ const Url = require('../models/url');
 
 const router = new Router();
 
-router.get('/:cipher', async (ctx) => {
+router.get('/:urlcode', async (ctx) => {
   try {
-    const url = await Url.findOne({
-      urlCipher: ctx.params.cipher,
+    const codeInDb = await Url.findOne({
+      urlCode: ctx.params.urlcode,
     });
-    if (url) {
-      ctx.redirect(url.fullUrl);
+    if (codeInDb) {
+      ctx.redirect(codeInDb.fullUrl);
+    } else {
+      ctx.body = '<h1>Invalid url!</h1>';
     }
-    ctx.body = '<h1>Invalid url!</h1>';
   } catch (err) {
     console.error(err);
   }

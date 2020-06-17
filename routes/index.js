@@ -1,10 +1,10 @@
 const Router = require('koa-router');
-const shorten = require('./shorten');
 const home = require('./home');
-const cipher = require('./cipher');
+const shortener = require('./shortener');
+const encoder = require('./encoder');
 
 const router = new Router();
 
-router.use(home, shorten, cipher);
+router.use(home, shortener, encoder);
 
 module.exports = router;

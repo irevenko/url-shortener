@@ -26,6 +26,7 @@ Red, Cherry 🍒 Themed Web Service for Shortening urls
 
 # ToDo
 * Deploy
+* Update routes to separate functions
 * Add JSDocs, Test (jest, mocha or jasmin)
 
 # License 📑 
