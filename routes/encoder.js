@@ -1,14 +1,12 @@
 /* eslint-disable no-console */
 const Router = require('koa-router');
-const Url = require('../models/url');
+const Url = require('../models/Url');
 
 const router = new Router();
 
 router.get('/:urlcode', async (ctx) => {
   try {
-    const codeInDb = await Url.findOne({
-      urlCode: ctx.params.urlcode,
-    });
+    const codeInDb = await Url.findOne({ urlCode: ctx.params.urlcode });
     if (codeInDb) {
       ctx.redirect(codeInDb.fullUrl);
     } else {

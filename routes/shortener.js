@@ -1,13 +1,13 @@
 /* eslint-disable no-console */
 const Router = require('koa-router');
 const shortid = require('shortid');
-const Url = require('../models/url');
+const Url = require('../models/Url');
 
 const router = new Router();
+const parentUrl = process.env.PARENT_URL || 'http://localhost:3000';
 
 router.post('/shortener', async (ctx) => {
   const fullUrl = ctx.request.body['full-url'];
-  const parentUrl = process.env.PARENT_URL;
   const urlCode = shortid.generate();
 
   try {
@@ -26,6 +26,7 @@ router.post('/shortener', async (ctx) => {
       });
       await newUrl.save();
       await ctx.render('not-in-db', {
+        notInDb: true,
         newUrl: newUrl.shortUrl,
         fullUrl,
       });

@@ -1,34 +1,7 @@
-<nav class="flex items-center justify-between flex-wrap bg-red-500 p-6">
-  <div class="flex items-center flex-shrink-0 text-white mr-6">
-    <img src="https://www.svgrepo.com/show/7355/cherry.svg" alt="cherry" width="85" />
-    <span class="font-semibold text-3xl tracking-tight">Cherry Shortener</span>
-  </div>
-  <div class="w-full block flex-grow lg:flex lg:items-center lg:w-auto">
-    <div class="text-sm lg:flex-grow">
-      <a href="#responsive-header" class="block mt-4 lg:inline-block lg:mt-0 text-red-200 hover:text-white"> </a>
-    </div>
-    <div>
-      <a href="https://github.com/irevenko/url-shortener" class="inline-block text-xl px-4 py-2 leading-none border rounded text-white border-white hover:border-transparent hover:text-red-500 hover:bg-white mt-4 lg:mt-0">
-        <img width=28 class="inline-block" src="https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fcdn.onlinewebfonts.com%2Fsvg%2Fimg_4266.png&f=1&nofb=1">
-         Github
-      </a>
-    </div>
-  </div>
-</nav>
-<form class="w-full max-w-sm container mx-auto mt-24" action="shortener" method="POST" id="url-form">
-  <label class="block text-gray-700 text-lg font-bold mb-2" for="full-url">
-    Enter you URL
-  </label>
-  <div class="flex items-center border-b border-b-2 border-red-500 py-2">
-    <input class="appearance-none bg-transparent border-none w-full text-gray-700 mr-3 py-1 px-2 leading-tight focus:outline-none" type="url" name="full-url" id="url-input" />
-    <button class="flex-shrink-0 bg-red-500 hover:bg-red-700 border-red-500 hover:border-red-700 text-base border-4 text-white py-1 px-2 rounded" type="submit">
-      Shrink
-    </button>
-  </div>
-</form>
+<%- include('home') %>
 <div role="alert" class="mt-3 text-center max-w-xl container mx-auto break-all">
   <div class="bg-red-500 text-white font-bold rounded-t px-4 py-2">
-    Your short url for <%- fullUrl %>
+    Short URL for <a href=<%- fullUrl %> class="text-indigo-800"><%- fullUrl %></a>
   </div>
   <div id="display-short-url" class="border border-t-0 border-red-400 rounded-b bg-red-100 px-4 py-3 text-red-700">
     <p><%- urlInDb %></p>
