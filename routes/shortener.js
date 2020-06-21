@@ -6,6 +6,10 @@ const Url = require('../models/Url');
 const router = new Router();
 const parentUrl = process.env.PARENT_URL || 'http://localhost:3000';
 
+/**
+ * @description Shrinks the link
+ * @route POST /shortener
+ */
 router.post('/shortener', async (ctx) => {
   const fullUrl = ctx.request.body['full-url'];
   const urlCode = shortid.generate();

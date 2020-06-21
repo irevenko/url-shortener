@@ -4,6 +4,11 @@ const Url = require('../models/Url');
 
 const router = new Router();
 
+/**
+ * @description Redirects user to their initial link
+ * @route GET /:urlcode
+ * @param {string} - shortid token
+ */
 router.get('/:urlcode', async (ctx) => {
   try {
     const codeInDb = await Url.findOne({ urlCode: ctx.params.urlcode });

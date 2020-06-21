@@ -9,8 +9,8 @@ And we get a token - ```1kDdvurHW```. Then we have to hookup this token to our d
 After this we compose our short URL by adding token after domen - ```short.me/1kDdvurHW``` <br>
 If URL is in DB we return it to user, Else we just create a new one by assembling our ```domen``` and ```token``` together.<br>
 Finally when user enters this URL we redirect him to our initial site by checking the token from the DB and comparing it to our URL.  ```short.me/1kDdvurHW  ->  github.com``` <br>
-So our DB Schema has URl collection which contains: ```Full URL, URL Code, Short URL``` <br>
-
+So our DB Schema has URL collection which contains: ```Full URL, URL Token, Short URL``` <br>
+And we store our Full URL together with unique URL Token
 
 # Technologies 🧾
 * Node.js 
