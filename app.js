@@ -1,6 +1,7 @@
 /* eslint-disable no-console */
 const Koa = require('koa');
 const render = require('koa-ejs');
+const json = require('koa-json');
 const bodyParser = require('koa-bodyparser');
 const path = require('path');
 const makeConnection = require('./utils/connection');
@@ -13,6 +14,7 @@ const PORT = process.env.PORT || 3000;
 makeConnection(app, PORT);
 
 app.use(bodyParser());
+app.use(json());
 app.use(routes.routes());
 app.use(routes.allowedMethods({ throw: true }));
 
