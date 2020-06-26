@@ -37,8 +37,7 @@ And we store our Full URL together with unique URL Token
 
 # ToDo
 * Deploy
-* Add Tests (jest, mocha or jasmin)
-* Add passport.js, user cabinet
+* Update Front-End
 
 # License 📑 
 (c) 2020 Ilya Revenko. [MIT License](https://tldrlegal.com/license/mit-license)
