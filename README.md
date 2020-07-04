@@ -20,15 +20,15 @@ And we store our Full URL together with unique URL Token
 * Tailwind CSS
 
 # Preview 🔍
-<img src="https://i.imgur.com/O1of7X4.png"> 
-<img src="https://i.imgur.com/eM9B8jQ.png">
+<img src="https://i.imgur.com/iQPNQs3.png"> 
+<img src="https://i.imgur.com/6g60tq8.png">
 
 # Quick Start 🚀
 ```git clone https://github.com/irevenko/url-shortener.git``` <br>
-```cd url-shortener``` <br>
+```cd url-shortener/src``` <br>
 ```npm install``` <br>
 ```touch .env (Add your variables)``` <br>
-```npm start```
+```node app.js```
 
 # What I Learned 🧠
 * koa, koa-router, koa-bodyparser
@@ -36,8 +36,7 @@ And we store our Full URL together with unique URL Token
 * MongoDB
 
 # ToDo
-* Deploy
-* Update Front-End
+* Deploy on Heroku
 
 # License 📑 
 (c) 2020 Ilya Revenko. [MIT License](https://tldrlegal.com/license/mit-license)
